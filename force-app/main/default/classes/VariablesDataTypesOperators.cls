@@ -74,7 +74,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The quotient of the division, or 0 if the denominator is zero.
      */
     public static Decimal division(Integer a, Integer b) {
-        if(a == 0 || b == 0){
+        if(b == 0){
             return 0;
         }else{
             return a / b;
@@ -93,11 +93,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        if(math.mod(num,2)==0){
-            return true;
-        }else {
-            return false;
-        }
+      return (math.mod(num,2)==0);
         // Replace null with the variable you used to store the result
     }
 
@@ -109,11 +105,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return true if the number is positive, false otherwise.
      */
     public static Boolean isPositive(Integer num) {
-        if(num > 0){
-            return true;
-        }else{
-            return false;
-        }
+        return (num > 0);
         // Replace null with the variable you used to store the result
     }
 
@@ -154,11 +146,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is in the past, False otherwise.
      */
     public static Boolean isDateInPast(Date dt) {
-        if(dt < Date.today()){
-        return true;
-        }else{
-        return false;
-        } // Replace null with the variable you used to store the result
+        return (dt < Date.today());
+         // Replace null with the variable you used to store the result
     }
 
     /**
@@ -171,11 +160,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        if(dt >= Date.today()){
-            return true;
-        }else{
-            return false;
-        }
+        return (dt >= Date.today());
         // Replace null with the variable you used to store the result
     }
 
@@ -189,8 +174,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return The number of milliseconds equivalent to the given number of minutes.
      */
     public static Integer convertMinutesToMilliseconds(Integer minutes) {
-        Integer MILLISECONDS_PER_MINUTE = minutes / 10000;// Make this value a constant
-        Integer milliseconds = minutes * 60000;
+        Integer MILLISECONDS_PER_MINUTE = 60000;// Make this value a constant
+        Integer milliseconds = minutes * MILLISECONDS_PER_MINUTE;
         return milliseconds; // Replace null with the variable you used to store the result
     }    
 
@@ -221,10 +206,10 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer adjustOrderOfOperations1(Integer a, Integer b, Integer c) {
         // Add parentheses around the addition operation so that it is performed before multiplication
-        Integer result = (a + b) * c;
+        return (a + b) * c;
 
         // Return the result
-        return result; // Replace null with the variable you used to store the result
+         // Replace null with the variable you used to store the result
     }
 
     /**
@@ -236,8 +221,8 @@ public with sharing class VariablesDataTypesOperators {
         // Add parentheses in the below expression to change the result.
         // The result of the expression as it is right now is 43. 
         // You should add parentheses so that the result of the expression becomes 8.
-        Integer answer = 48 - (15 + 5) * 2;
-        return answer; // Replace null with the variable you used to store the result
+        return 48 - (15 + 5) * 2;
+         // Replace null with the variable you used to store the result
     }
 
     /**
@@ -256,9 +241,9 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Double complexOrderOfOperations(Integer a, Integer b, Integer c, Integer d, Integer e) {
         // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
-        Double result = (a * b - c) / (Double) d + e;
+        return (a * b - c) / (Double) d + e;
 
-        return result; // Replace null with the variable you used to store the result
+         // Replace null with the variable you used to store the result
     }
 
     /**
@@ -292,8 +277,8 @@ public with sharing class VariablesDataTypesOperators {
         Double divisionResult = a / b;
 
         // Write the code for type casting the divisionResult to an Integer
-        Integer roundedResult = Integer.valueOf(divisionResult);
-        return roundedResult; // Replace null with the variable you used to store the result
+       return Integer.valueOf(divisionResult);
+         // Replace null with the variable you used to store the result
     }
 
     /**
